@@ -1,21 +1,28 @@
 # vbaDocumentsAddin
+
 VBA macros for automating the filling out of contracts, work orders, invoices and various kinds of documents with tables.
 Надстройка vba для автоматизации заполнения договоров и прочих документов, таких как заказ-наряды на выполнение работ, акты выполненных работ и счета-фактуры.
+
 ## Описание файлов
 ### форма
+
 OrderForm.frm - форма заказ-наряда, код;
 OrderForm.frx - форма заказ-наряда, внутренне представление формы;
+
 ### модули
+
 errors.bas - исключения, сообщения об ошибках;
 factories.bas - фабрика класса СRowFrame, строка таблицы формы заказ-наряда;
 NamesInGenitive.bas - ФИО в родительном падеже, использование - см. в модуле tests.bas: test_name_in_genitive();
 tests.bas - тесты, примеры использования;
 utis.bas - утилиты;
+
 ### модули классов
-CDateNumberBox.cls - реализация TextBox'ов для даты - день, месяц, год. OrderForm должна содержать textboxes tbDay, tbMonth, tbYear соответственно;
-CDateSpinButtons.cls - реализация SpinButtons для даты. OrderForm должна содержать spinbuttons: sbDay, sbMonth, sbYear;
-CDefaultDocument.cls - дефолтная имплементация автоматизации заполнения документа .docx: заполняются поля и табличные поля;
-CDefaultNameGenerator.cls - дефолтная генерация имени документа: среди полей выбирается первое поле, включающее "номер" и этот номер используется в качестве имени документа;
+
+CDateNumberBox.cls - реализация TextBox'ов для даты - день, месяц, год. OrderForm должна содержать textboxes tbDay, tbMonth, tbYear соответственно
+CDateSpinButtons.cls - реализация SpinButtons для даты. OrderForm должна содержать spinbuttons: sbDay, sbMonth, sbYear
+CDefaultDocument.cls - дефолтная имплементация автоматизации заполнения документа .docx: заполняются поля и табличные поля
+CDefaultNameGenerator.cls - дефолтная генерация имени документа: среди полей выбирается первое поле, включающее "номер" и этот номер используется в качестве имени документа
 CDefaultTables.cls - дефолтная реализация выбора таблиц документа, содержащих табличные поля, выбираются таблицы соответствующие шаблону "order_template.docx";
 CFieldsReaderFromXL.cls - reader переменных полей документа из .xlsx файла;
 CNumberBox.cls -реализация TextBox для ввода только целых чисел с ограничением на минимум и максимум;
